@@ -1,5 +1,22 @@
 <script>
 	import { page } from '$app/stores';
+
+	const darkMode = () => {
+		console.log('tes');
+	};
+
+	const dashboard = [
+		{ label: 'Home', href: '/' },
+		{ label: 'About', href: 'about' },
+		{ label: 'Gallery', href: 'gallery' },
+		{ label: 'Contact', href: 'contact' }
+	];
+
+	const handleToggle = () => {
+		console.log('handle');
+	};
+
+	let openToggle = false;
 </script>
 
 <header class="nav-header">
@@ -16,14 +33,39 @@
 				<a sveltekit:prefetch href="/contact">Contact</a>
 			</li>
 		</ul>
-		<div class="navbar-toggle">
+		<div class="navbar-toggle" on:click={darkMode}>
 			<img src="./img/IconMode.svg" alt="" />
 		</div>
 	</div>
 	<div class="mobile-only">
 		<a href="#" class="header-logo">Xae</a>
-		<div class="header-menu">
-			<img src="./img/hamburger.svg" alt="" />
+		<div class="toggle-menu">
+			<div
+				class="header-menu"
+				on:click={() => (openToggle = !openToggle)}
+				class:change={openToggle}
+			>
+				<img src="./img/hamburger.svg" alt="" />
+			</div>
+			<div class="sideToggle" class:open={openToggle}>
+				<a href="#a" class="closebtn" on:click={() => (openToggle = !openToggle)}>&times;</a>
+				<ul>
+					{#each dashboard as db}
+						<li>
+							<a href={db.href}>{db.label}</a>
+						</li>
+					{/each}
+				</ul>
+			</div>
+			<!-- <div class:open={openToggle}>
+				<ul>
+					{#each dashboard as db}
+						<li>
+							<a href={db.href}>{db.label}</a>
+						</li>
+					{/each}
+				</ul>
+			</div> -->
 		</div>
 	</div>
 </header>
@@ -33,7 +75,8 @@
 		position: fixed;
 		top: 0;
 		width: 100%;
-		height: 100px;
+		height: 70px;
+		background: linear-gradient(289.6deg, #0c0c0c 0%, #2c4550 98.22%);
 	}
 
 	.menus {
@@ -52,8 +95,7 @@
 	}
 
 	.menu-list li.active {
-        border-bottom: 2px solid var(--pure-white);
-		
+		border-bottom: 2px solid var(--pure-white);
 	}
 
 	.menu-list li {
@@ -64,7 +106,7 @@
 		padding: 25px;
 		color: var(--pure-white);
 		text-decoration: none;
-        position: relative;
+		position: relative;
 	}
 
 	.menu-list li a::after {
@@ -80,10 +122,10 @@
 		transition: width 0.3s ease 0s, left 0.3s ease 0s;
 	}
 
-    .menu-list li a:hover::after{
-        width: 100%;
-        left: 0;
-    }
+	.menu-list li a:hover::after {
+		width: 100%;
+		left: 0;
+	}
 	.navbar-toggle {
 		position: absolute;
 		top: 20px;
@@ -102,30 +144,73 @@
 	@media screen and (max-width: 768px) {
 		.nav-header {
 			width: 100%;
+            height: 120px;
 		}
 		.menus {
 			display: none;
 		}
 
 		.mobile-only {
+            position: sticky;
 			display: flex;
+            height: 100px;
 			width: 100%;
 			justify-content: space-between;
 			align-items: center;
-			padding-top: 50px;
+			padding-top: 20px;
+			/* background: linear-gradient(289.6deg, #0c0c0c 0%, #2c4550 98.22%); */
 			/* padding-left: 10px; */
 		}
 
+		.toggle-menu {
+			position: relative;
+			display: flex;
+			margin: auto;
+			box-sizing: border-box;
+			align-items: center;
+		}
 		.header-logo {
 			font-size: 48px;
 			font-weight: 700;
 			color: var(--pure-white);
 			text-decoration: none;
-			padding-left: 50px;
 		}
 
 		.header-menu {
+			position: absolute;
+			left: 120px;
 			width: 100px;
+			cursor: pointer;
+			display: inline-block;
+		}
+
+		.sideToggle {
+			height: 120px;
+			position: fixed;
+			width: 0;
+			top: 0;
+			right: 0;
+			background: linear-gradient(289.6deg, #0c0c0c 0%, #2c4550 98.22%);
+			transition: 0.5s;
+		}
+
+		.sideToggle a {
+			text-decoration: none;
+			/* padding: 5px; */
+			color: var(--pure-white);
+		}
+
+		.sideToggle a:hover {
+			color: red;
+		}
+
+		.open {
+			width: 30%;
+		}
+
+		.closebtn {
+			position: absolute;
+			left: 10px;
 		}
 	}
 </style>

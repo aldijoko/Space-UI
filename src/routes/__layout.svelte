@@ -6,6 +6,7 @@
 </script>
 
 <div class="container">
+	
 	<div class="side-menu">
 		<Navbar />
 	</div>
@@ -102,6 +103,8 @@
 
 		.mobile-header {
 			z-index: 2;
+			position: sticky;
+			height: auto;
 		}
 		
 
