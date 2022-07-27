@@ -4,7 +4,7 @@ Everything you need to build a Svelte project, powered by [`create-svelte`](http
 
 ## Link for Figma
 
-[Figma] (https://www.figma.com/file/hDcipE9zMuiDsYAkjcQuKw/Space?node-id=5%3A13)
+[Figma](https://www.figma.com/file/hDcipE9zMuiDsYAkjcQuKw/Space?node-id=5%3A13)
 
 
 ## Building
