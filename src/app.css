@@ -1,0 +1,16 @@
+@import '@fontsource/poppins';
+
+:root {
+	font-family: 'Poppins', sans-serif;
+	--pure-white: #ffffff;
+	--primary-color: #0C0C0C;
+	--secondary-color: #2C4550;
+}
+
+body {
+	margin: 0;
+	background-color: var(--primary-color);
+	background: linear-gradient(289.6deg, #0C0C0C 0%, #2C4550 98.22%);
+}
+
+
