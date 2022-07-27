@@ -11,4 +11,4 @@ Everything you need to build a Svelte project, powered by [`create-svelte`](http
 
 Building for deploy using Netlify and this the result
 
-- Live Site URL: [Live Url](https://incandescent-kashata-525804.netlify.app/)
+- Live Site URL: [Live Url](https://spaceuialjok.netlify.app/)
