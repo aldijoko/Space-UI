@@ -45,7 +45,7 @@
     <div class="content-mobile">
         <h1>Exploration</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
-        <img class="vector" src="./img/vector2.svg" alt="">
+        <img class="vector-mobile" src="./img/vector2.svg" alt="">
     </div>
    
 </div>
@@ -125,20 +125,15 @@
         display: none;
     }
 
-    cont-foot {
-        display: none;
-    }
+    
 
-    .content-mobile {
-        display: none;
-    }
 
     @media screen and (max-width: 768px) {
 
         footer {
             display: none;
         }
-		.footer-photo, .content-footer, .foot-footer {
+		.footer-photo, .content-footer, .foot-footer, .cont-foot {
             display: none;
         }
         
@@ -156,16 +151,20 @@
         }
 
         .content-mobile {
-            position: relative;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            margin-left: 20px;
         }
 
         .img-mobile {
             margin-left: 20px;
             width: 238px;
             height: 187px;
+        }
+
+        .vector-mobile {
+           position: absolute;
+            right: 0;
         }
 
 	}

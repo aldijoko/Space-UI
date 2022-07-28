@@ -76,7 +76,7 @@
 		top: 0;
 		width: 100%;
 		height: 70px;
-		background: linear-gradient(289.6deg, #0c0c0c 0%, #2c4550 98.22%);
+
 	}
 
 	.menus {
@@ -144,16 +144,14 @@
 	@media screen and (max-width: 768px) {
 		.nav-header {
 			width: 100%;
-            height: 120px;
+			/* background: linear-gradient(289.6deg, #0c0c0c 0%, #2c4550 98.22%); */
 		}
 		.menus {
 			display: none;
 		}
 
 		.mobile-only {
-            position: sticky;
 			display: flex;
-            height: 100px;
 			width: 100%;
 			justify-content: space-between;
 			align-items: center;
@@ -185,7 +183,7 @@
 		}
 
 		.sideToggle {
-			height: 120px;
+			height: 100%;
 			position: fixed;
 			width: 0;
 			top: 0;
@@ -212,5 +210,6 @@
 			position: absolute;
 			left: 10px;
 		}
+        
 	}
 </style>

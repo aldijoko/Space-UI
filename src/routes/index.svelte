@@ -119,12 +119,13 @@
 			background-image: url("/img/mobile-illustration.svg");
 			background-repeat: no-repeat;
 			background-position: center;
+			background-attachment: fixed;
 			background-size: cover;
 		}
 
 		.content-mobile {
 			position: relative;
-			margin-top: 400px;
+			margin-top: 350px;
 			padding-left: 30px;
 			width: 100%;
 			height: 100%;

@@ -98,13 +98,16 @@
 		.mobile-only {
 			width: 100%;
 			display: flex;
-			justify-content: space-between;
+			/* justify-content: space-between; */
 		}
 
 		.mobile-header {
-			z-index: 2;
-			position: sticky;
-			height: auto;
+			position: fixed;
+			width: 100%;
+			transition: 0.4s;
+			top: 0;
+			z-index: 99;
+			padding: 100px 5px;
 		}
 		
 
@@ -112,7 +115,7 @@
 			display: flex;
 			position: relative;
 			width: 100%;
-			z-index: -1;
+			/* z-index: -1; */
 			/* flex-direction: column; */
 		}
 
@@ -120,8 +123,9 @@
 			position: absolute;
 			width: 100%;
 			top: 800px;
+			height: fit-content;
 		}
-		
+	
 		
 	}
 
