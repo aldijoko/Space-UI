@@ -6,27 +6,28 @@
 </script>
 
 <div class="container">
-	
 	<div class="side-menu">
 		<Navbar />
 	</div>
 	<div class="content">
-		<Header />
+		
+		<div class="content-header">
+			<Header />
+		</div>
 		<div class="content-body">
 			<slot />
 			<div class="footer">
 				<Footer />
 			</div>
 		</div>
-		
 	</div>
 
 	<div class="mobile-only">
 		<div class="mobile-header">
-			<Header/>
+			<Header />
 		</div>
 		<div class="mobile-content">
-			<slot/>
+			<slot />
 		</div>
 		<div class="footer-mobile-only">
 			<Footer />
@@ -61,6 +62,13 @@
 		/* overflow-y: auto; */
 	}
 
+	.content-header {
+		width: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 99;
+	}
+
 	.content-body {
 		max-width: 100vw;
 		width: 100%;
@@ -80,15 +88,13 @@
 		display: none;
 	}
 
-
-
 	@media screen and (max-width: 768px) {
 		.container {
 			overflow: auto;
 			height: 896px;
 		}
 
-		.content{
+		.content {
 			display: none;
 		}
 		.side-menu {
@@ -98,20 +104,18 @@
 		.mobile-only {
 			width: 100%;
 			display: flex;
+			/* flex-direction: column; */
 			/* justify-content: space-between; */
 		}
 
 		.mobile-header {
-			position: fixed;
 			width: 100%;
-			transition: 0.4s;
+			position: fixed;
 			top: 0;
 			z-index: 99;
-			padding: 100px 5px;
 		}
-		
 
-		.mobile-content{
+		.mobile-content {
 			display: flex;
 			position: relative;
 			width: 100%;
@@ -125,8 +129,6 @@
 			top: 800px;
 			height: fit-content;
 		}
-	
-		
 	}
 
 	/* main {

@@ -70,7 +70,7 @@
 	}
 
 	.container-image {
-		position: absolute;
+		position: fixed;
 		width: 100%;
 		height: 100%;
 		/* top: -140px; */
@@ -88,10 +88,10 @@
 	}
 
 	.astro {
-		position: relative;
+		position: absolute;
 		z-index: 0;
-		left: 260px;
-  		top: -705px;
+		left: 245px;
+  		top: 150px;
 	}
 
 	.container-mobile {
@@ -125,7 +125,7 @@
 
 		.content-mobile {
 			position: relative;
-			margin-top: 350px;
+			margin-top: 300px;
 			padding-left: 30px;
 			width: 100%;
 			height: 100%;

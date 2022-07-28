@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	const darkMode = () => {
 		console.log('tes');
@@ -12,14 +13,28 @@
 		{ label: 'Contact', href: 'contact' }
 	];
 
-	const handleToggle = () => {
-		console.log('handle');
-	};
+
+	const scrollNavbar = 140
+
+	let show = false
+
+
+	onMount (() => {
+		window.onscroll = () => {
+			if(window.scrollY > scrollNavbar){
+				console.log(window.screenY)
+				show = true
+			} 
+			else {
+				show = false
+			}
+		};
+	})
 
 	let openToggle = false;
 </script>
 
-<header class="nav-header">
+<header class="nav-header" class:shrink={show}>
 	<div class="menus">
 		<ul class="menu-list">
 			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
@@ -37,7 +52,7 @@
 			<img src="./img/IconMode.svg" alt="" />
 		</div>
 	</div>
-	<div class="mobile-only">
+	<div class="mobile-only" >
 		<a href="#" class="header-logo">Xae</a>
 		<div class="toggle-menu">
 			<div
@@ -75,8 +90,7 @@
 		position: fixed;
 		top: 0;
 		width: 100%;
-		height: 70px;
-
+		/* height: 70px; */
 	}
 
 	.menus {
@@ -141,14 +155,25 @@
 		display: none;
 	}
 
+	.shrink {
+			background: linear-gradient(289.6deg, #0C0C0C 0%, #2C4550 98.22%);
+			/* padding: 10px 0px; */
+			height: 90px;
+			transition: all 0.4s ease-in-out;
+			box-shadow: 0 -0.4rem 0.9rem 0.2rem rgb(0 0 0 / 50%);
+			transform: translateY(0%);
+		}
+
 	@media screen and (max-width: 768px) {
 		.nav-header {
 			width: 100%;
-			/* background: linear-gradient(289.6deg, #0c0c0c 0%, #2c4550 98.22%); */
+			position: fixed;
 		}
 		.menus {
 			display: none;
 		}
+
+		
 
 		.mobile-only {
 			display: flex;
@@ -210,6 +235,5 @@
 			position: absolute;
 			left: 10px;
 		}
-        
 	}
 </style>
